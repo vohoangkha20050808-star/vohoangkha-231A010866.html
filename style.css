@@ -1,0 +1,253 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header & Menu điều hướng chính */
+header {
+  background: #2c3e50;
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+header .logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: background 0.3s;
+  font-size: 14px;
+}
+
+nav a:hover, nav a.active {
+  background: #3498db;
+}
+
+.container {
+  max-width: 900px;
+  margin: 30px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #2c3e50;
+  font-size: 24px;
+}
+
+/* Bài 1: Grid sản phẩm */
+.search-box {
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.product-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 15px;
+  background: #fff;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+}
+
+.product-card h3 {
+  margin: 10px 0;
+  font-size: 18px;
+  color: #2c3e50;
+}
+
+.product-card p {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+.error-msg {
+  text-align: center;
+  color: #e74c3c;
+  font-weight: bold;
+  grid-column: 1 / -1;
+  padding: 20px;
+}
+
+/* Bài 2: Form Đăng ký */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.btn-submit {
+  background: #27ae60;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.btn-submit:hover {
+  background: #219653;
+}
+
+.msg {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+.msg.success { background: #d4edda; color: #155724; }
+.msg.error { background: #f8d7da; color: #721c24; }
+
+/* Bài 3: Đồng hồ đếm ngược */
+.timer-display {
+  font-size: 48px;
+  font-weight: bold;
+  text-align: center;
+  margin: 30px 0;
+  color: #2c3e50;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); color: #e74c3c; }
+  50% { transform: scale(1.05); color: #c0392b; text-shadow: 0 0 10px rgba(231, 76, 60, 0.5); }
+  100% { transform: scale(1); color: #e74c3c; }
+}
+
+.timer-warning {
+  animation: pulse 1s infinite;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+}
+.modal-content button {
+  margin-top: 15px;
+  padding: 8px 15px;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Trang Lý thuyết & Điểm danh */
+.theory-section {
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+.theory-section h2 {
+  font-size: 18px;
+  color: #2980b9;
+  margin-bottom: 10px;
+}
+
+/* Bài 23 Đèn kéo quân 3D */
+.scene {
+  width: 200px;
+  height: 260px;
+  perspective: 1000px;
+  margin: 40px auto;
+}
+
+.carousel {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.carousel__face {
+  position: absolute;
+  width: 200px;
+  height: 260px;
+  border: 2px solid #ffd700;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+  background-color: #222;
+}
+
+.carousel__face img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel__face:nth-child(1) { transform: rotateY(  0deg) translateZ(175px); }
+.carousel__face:nth-child(2) { transform: rotateY( 60deg) translateZ(175px); }
+.carousel__face:nth-child(3) { transform: rotateY(120deg) translateZ(175px); }
+.carousel__face:nth-child(4) { transform: rotateY(180deg) translateZ(175px); }
+.carousel__face:nth-child(5) { transform: rotateY(240deg) translateZ(175px); }
+.carousel__face:nth-child(6) { transform: rotateY(300deg) translateZ(175px); }

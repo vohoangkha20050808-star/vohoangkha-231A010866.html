@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bài 3 - Đồng Hồ Đếm Ngược</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">Bài Thi Kết Thúc HP</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Trang Chủ</a></li>
+        <li><a href="baitap01.html">Bài 1</a></li>
+        <li><a href="baitap02.html">Bài 2</a></li>
+        <li><a href="baitap03.html" class="active">Bài 3</a></li>
+        <li><a href="baitap22.html">Bài tập 22</a></li>
+        <li><a href="baitap23.html">Bài tập 23</a><li><a href="https://vohoangkha20050808-star.github.io/bai23_vohoangkha_231A010866.html/" target="_blank">Bài tập 23 (Đèn kéo quân)</a></li>
+        <li><a href="about.html">Trả lời Lý thuyết</a></li>
+        <li><a href="contact.html">Thông tin Điểm danh</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container" style="text-align: center;">
+    <h1>Đồng Hồ Đếm Ngược (10 Phút)</h1>
+    <div id="timerDisplay" class="timer-display">10:00</div>
+    <p style="color: #666;">Thời gian sẽ tự động đếm ngược. Khi dưới 1 phút sẽ có hiệu ứng cảnh báo nhấp nháy.</p>
+  </div>
+
+  <div id="timeUpModal" class="modal">
+    <div class="modal-content">
+      <h2>Hết giờ!</h2>
+      <p>Thời gian làm bài đã kết thúc.</p>
+      <button onclick="location.reload()">Làm lại</button>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", initCountdown);</script>
+</body>
+</html>

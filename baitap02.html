@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bài 2 - Đăng Ký Người Dùng</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">Bài Thi Kết Thúc HP</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Trang Chủ</a></li>
+        <li><a href="baitap01.html">Bài 1</a></li>
+        <li><a href="baitap02.html" class="active">Bài 2</a></li>
+        <li><a href="baitap03.html">Bài 3</a></li>
+        <li><a href="baitap22.html">Bài tập 22</a></li>
+        <li><a href="baitap23.html">Bài tập 23</a><li><a href="https://vohoangkha20050808-star.github.io/bai23_vohoangkha_231A010866.html/" target="_blank">Bài tập 23 (Đèn kéo quân)</a></li>
+        <li><a href="about.html">Trả lời Lý thuyết</a></li>
+        <li><a href="contact.html">Thông tin Điểm danh</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1>Đăng Ký Tài Khoản</h1>
+    <form id="registerForm">
+      <div class="form-group">
+        <label for="name">Họ và tên:</label>
+        <input type="text" id="name" required placeholder="Nhập họ tên...">
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" required placeholder="Nhập email hợp lệ...">
+      </div>
+      <div class="form-group">
+        <label for="password">Mật khẩu:</label>
+        <input type="password" id="password" required placeholder="Ít nhất 8 ký tự, gồm chữ hoa, chữ thường, số...">
+      </div>
+      <div class="checkbox-group">
+        <input type="checkbox" id="terms" required>
+        <label for="terms" style="margin-bottom:0;">Đồng ý với các điều khoản dịch vụ</label>
+      </div>
+      <button type="submit" class="btn-submit">Đăng Ký</button>
+      <div id="formMsg" class="msg" style="display:none;"></div>
+    </form>
+  </div>
+
+  <script src="js/script.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", initRegisterForm);</script>
+</body>
+</html>

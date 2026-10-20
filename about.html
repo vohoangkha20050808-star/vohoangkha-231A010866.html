@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lý Thuyết - Phần Giải Thích</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">Bài Thi Kết Thúc HP</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Trang Chủ</a></li>
+        <li><a href="baitap01.html">Bài 1</a></li>
+        <li><a href="baitap02.html">Bài 2</a></li>
+        <li><a href="baitap03.html">Bài 3</a></li>
+        <li><a href="baitap22.html">Bài tập 22</a></li>
+        <li><a href="baitap23.html">Bài tập 23</a></li>
+        <li><a href="about.html" class="active">Trả lời Lý thuyết</a></li>
+        <li><a href="contact.html">Thông tin Điểm danh</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1>Giải Thích Logic Tư Duy & Phần Lý Thuyết Chi Tiết</h1>
+
+    <div class="theory-section">
+      <h2>1. Phân biệt `position: absolute` và `position: relative` trong CSS</h2>
+      <p><strong>Bản chất và Sự khác biệt:</strong></p>
+      <ul style="margin-left: 20px; margin-bottom: 10px;">
+        <li><code>position: relative</code> (Tương đối): Phần tử giữ nguyên vị trí chiếm chỗ ban đầu trong luồng tài liệu (normal flow). Khi thiết lập <code>top</code>, <code>left</code>, phần tử dịch chuyển khỏi vị trí gốc nhưng không ảnh hưởng đến vị trí các khối xung quanh. Thường đóng vai trò làm khung neo cho phần tử con mang <code>absolute</code>.</li>
+        <li><code>position: absolute</code> (Tuyệt đối): Phần tử bị nhấc ra khỏi luồng tài liệu chuẩn, hoàn toàn không chiếm chỗ. Tọa độ của nó được định vị dựa trên phần tử cha gần nhất có <code>position</code> khác <code>static</code>.</li>
+      </ul>
+      <p><strong>Ảnh hưởng khi Deploy & Responsive:</strong> Thường dùng <code>relative</code> cho khung chứa và <code>absolute</code> cho badge hoặc nút đè góc. Khi deploy, nếu cố định <code>absolute</code> bằng px tĩnh trên thiết bị di động, bố cục dễ vỡ, do đó phải dùng tỉ lệ phần trăm <code>%</code> hoặc đơn vị linh hoạt.</p>
+    </div>
+
+    <div class="theory-section">
+      <h2>2. Quy trình đăng ký Domain, Hosting, vai trò DNS và Bảo mật</h2>
+      <p><strong>Quy trình thực hiện:</strong> Mua tên miền -> Đưa mã nguồn tĩnh lên Netlify/GitHub Pages -> Cấu hình bản ghi DNS (A record hoặc CNAME) để trỏ tên miền về hosting.</p>
+      <p><strong>Vai trò DNS & Bảo mật:</strong> DNS giúp phân giải tên miền dạng chữ sang IP. Nếu không cài đặt chứng chỉ SSL/HTTPS, dữ liệu người dùng truyền tải bị nguy cơ nghe lén. Cấu hình lỏng lẻo dễ gây mất quyền kiểm soát tên miền (Domain Hijacking).</p>
+    </div>
+
+    <div class="theory-section">
+      <h2>3. So sánh `let`, `const`, `var` và cách Debug bằng Chrome DevTools</h2>
+      <p><strong>So sánh:</strong> <code>var</code> có phạm vi hàm (function scope), bị hoisting giá trị <code>undefined</code>. <code>let</code> và <code>const</code> có phạm vi khối (block scope), nằm trong Temporal Dead Zone khi hoisting. <code>const</code> không cho gán lại giá trị.</p>
+      <p><strong>Tình huống lỗi & Debug:</strong> Lỗi phổ biến là dùng <code>var</code> trong vòng lặp <code>setTimeout</code> làm biến bị ghi đè. Mở Chrome DevTools (F12), vào tab <strong>Sources</strong>, click chọn số dòng để đặt <em>Breakpoint</em>, sau đó theo dõi giá trị biến ở mục <strong>Scope</strong>.</p>
+    </div>
+
+    <div class="theory-section">
+      <h2>4. Khái niệm Event Delegation và tối ưu hiệu suất</h2>
+      <p><strong>Khái niệm:</strong> Event Delegation tận dụng cơ chế <em>Event Bubbling</em> (sự kiện nổi bọt từ phần tử con lên cha). Ta chỉ gán một trình nghe sự kiện <code>addEventListener</code> trên phần tử cha duy nhất thay vì gán cho từng thẻ con.</p>
+      <p><strong>Ứng dụng & Lợi ích:</strong> Rất hiệu quả cho danh sách động (dynamic list) thêm/xóa phần tử liên tục. Giúp tiết kiệm dung lượng bộ nhớ RAM và tối ưu tốc độ phản hồi của trang web.</p>
+    </div>
+  </div>
+</body>
+</html>
